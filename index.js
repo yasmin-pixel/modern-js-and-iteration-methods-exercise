@@ -9,14 +9,16 @@ todoList = [
   { name: "Practice iteration", done: false }
 ]
 
-const makeTodoListElements = function () {
-  const elements = []
-  
-  for(let i = 0; i < todoList.length; i++ ) {
-    const todo = todoList[i]
-    const todoListElement = makeTodoListElement(todo)
-    elements.push(todoListElement)
-  }
+const makeTodoListElements = () => {
+  const elements = todoList.map((todo) => {
+    return makeTodoListElement(todo)
+  })
+
+  // for(let i = 0; i < todoList.length; i++ ) {
+  //   const todo = todoList[i]
+  //   const todoListElement = makeTodoListElement(todo)
+  //   elements.push(todoListElement)
+  // }
   
   return elements
 }
@@ -24,11 +26,9 @@ const makeTodoListElements = function () {
 const renderTodoList = function () {
   todoListContainer.innerHTML = ''
   const todoListElements = makeTodoListElements()
-  
-  for(let i = 0; i < todoListElements.length; i++ ) {
-    const todo = todoListElements[i]
-    todoListContainer.append(todo)
-  }
+  // [htmlElement, htmlElement] 
+
+  todoListElements.forEach((todo) => todoListContainer.append(todo))
 }
 
 const makeTodoListElement = function (todo) {

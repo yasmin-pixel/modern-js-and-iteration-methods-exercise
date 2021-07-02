@@ -91,3 +91,28 @@ addTodoButton.addEventListener('click', handleAddTodo)
 prioritizeButton.addEventListener('click', prioritize)
 
 renderTodoList()
+
+// const animals =[ "dog","cat","rabbit","parrot"]
+
+// const mapAnimals = animals.map(function(animal){ 
+
+// return "hello " + animal
+// })
+
+// const myFunction = ()=>{
+//   return "hello"
+
+// } 
+// const greeting = myFunction();
+
+
+
+const animals =[ "dog","cat","rabbit","parrot"]
+
+const filterAnimals = animals.filter((animal)=>{
+  return animal.length > 5
+})
+
+
+
+
